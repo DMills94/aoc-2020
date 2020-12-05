@@ -1,15 +1,15 @@
 const fs = require("fs");
 
-const txtToArray = (path) => {
+const txtToArray = (path, separator = "\n") => {
   return fs
     .readFileSync(path, "utf-8")
     .toString()
     .replace(/\r\n/g, "\n")
-    .split("\n");
+    .split(separator);
 };
 
-const stringToArray = (string) => {
-  return string.replace(/\r\n/g, "\n").split("\n");
+const stringToArray = (string, separator = "\n") => {
+  return string.replace(/\r\n/g, "\n").split(separator);
 };
 
 module.exports = { txtToArray, stringToArray };
